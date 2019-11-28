@@ -29,8 +29,7 @@ class preorder_traversal_iteration
 		while (stack_nodes.empty() == false)
 		{
 			TreeNode temp = stack_nodes.pop();
-			if (temp != null)
-				list_var.add(temp.val);
+			list_var.add(temp.val);
 
 			if (temp.right != null)
 			{
