@@ -1,0 +1,52 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
+class preorder_traversal_iteration
+{
+	public class TreeNode
+	{
+		int val;
+
+		TreeNode left;
+		TreeNode right;
+
+		TreeNode(int x)
+		{
+			val = x;
+		}
+	}
+
+	public List<Integer> preorderTraversal(TreeNode root)
+	{
+		List<Integer> list_var = new ArrayList<Integer>();
+		Stack<TreeNode> stack_nodes = new Stack<TreeNode>();
+		if (root == null)
+			return list_var;
+
+		stack_nodes.push(root);
+
+		while (stack_nodes.empty() == false)
+		{
+			TreeNode temp = stack_nodes.pop();
+			if (temp != null)
+				list_var.add(temp.val);
+
+			if (temp.right != null)
+			{
+				stack_nodes.push(temp.right);
+				System.out.println("right");
+
+			}
+			if (temp.left != null)
+			{
+				stack_nodes.push(temp.left);
+				System.out.println("left");
+
+			}
+
+		}
+		return list_var;
+
+	}
+}
